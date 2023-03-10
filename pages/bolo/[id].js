@@ -19,15 +19,29 @@ const Bolo = () => {
     fetcher
   );
 
+
   // Status da requição para o usuário
-  if (error) return <div>Falha ao carregar</div>;
+  if (error) return <div>No hay naranja fanta</div>;
+  
   if (!data) return <div>Carregando...</div>;
 
   return (
-    <h2>
-      Iremos renderizar os dados completo do bolo aqui, além disso crie um botão
-      para voltar para a página inicial utilizando o componente Link do Next.js
-    </h2>
+
+    <>
+
+    <a href="/">Volver al inicio</a>
+
+
+    <article>
+      <h3>{data.title}</h3>
+      <p>{data.description}</p>
+      <img src={data.image} alt={data.title} width="300" height="300"/>
+      <p>{data.text}</p>
+    </article>
+
+    
+    </>
+    
   );
 };
 
